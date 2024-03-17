@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from typing import List, Union
 """Craete a type annotated function that sums a list of mixed variable types
 """
+from typing import List, Union
 
 
 def sum_mixed_list(mxd_lst: List[Union[float, int]]) -> float:
