@@ -1,4 +1,4 @@
-#!/usssr/bin/env python3
+#!/usr/bin/env python3
 """Create a type annotated function that takes twoargs of type string and
 integer or float and return a tuple of type str and float..
 """
