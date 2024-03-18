@@ -5,10 +5,9 @@ Demonstrating async coroutine using random module.
 """
 import asyncio
 import random
-from typing import Union
 
 
-async def wait_random(max_delay: int = 10) -> Union[int, float]:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Asyncronous coroutine that waits for randome number of
     seconds from 0 - 10, then return the number.
