@@ -19,6 +19,6 @@ async def wait_random(max_delay: int = 10) -> Union[int, float]:
     Return:
         max_delay of type union[int, float].
     """
-    res = random.uniform(0, max_delay)
-    await asyncio.sleep(res)
-    return res
+    delay = random.uniform(0, max_delay)
+    await asyncio.sleep(delay)
+    return delay
