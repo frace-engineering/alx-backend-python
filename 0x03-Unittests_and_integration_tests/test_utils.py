@@ -1,4 +1,4 @@
-#!/usr/bin/env pythn3
+#!/usr/bin/env python3
 """Parameterize a unit test"""
 import unittest
 from parameterized import parameterized
