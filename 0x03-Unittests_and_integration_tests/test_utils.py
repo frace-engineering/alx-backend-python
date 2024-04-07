@@ -2,8 +2,9 @@
 """Parameterize a unit test"""
 import unittest
 from typing import Dict
+from unittest.mock import patch, Mock
 from parameterized import parameterized
-from utils import access_nested_map
+from utils import access_nested_map, get_json
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -21,11 +22,11 @@ class TestAccessNestedMap(unittest.TestCase):
         ({}, ("a",), KeyError("Key 'a'not found in nested map")),
         ({"a": 1}, ("a", "b"), KeyError("Key 'a' not found in nested map"))
         ])
-    def test_assess_nested_map_exception(self, nested_map, path,
+    def test_access_nested_map_exception(self, nested_map, path,
                                          expected_exception):
         """Test that the assess_nested_map function raises a KeyError"""
         with self.assertRaises(KeyError) as context:
-            assess_nested_map(nested_map, path)
+            access_nested_map(nested_map, path)
         self.assertEqual(str(context.exception), str(expected_exception))
 
 class TestGetJson(unittest.TestCase):
@@ -45,7 +46,8 @@ class TestGetJson(unittest.TestCase):
         Args:
             test_url (str): The test URL to be passed to get_json.
             test_payload (dict): The expected payload to be returned by
-            get_json.nmock_get: Mock object for the requests.get function.
+            get_json.
+            mock_get: Mock object for the requests.get function.
 
         Raises:
             AssertionError: If the output of get_json is not equal to
