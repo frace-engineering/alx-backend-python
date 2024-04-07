@@ -11,7 +11,8 @@ class TestAccessNestedMap(unittest.TestCase):
         ({}, ("a",), KeyError("Key 'a'not found in nested map")),
         ({"a": 1}, ("a", "b"), KeyError("Key 'a' not found in nested map"))
         ])
-    def test_assess_nested_map_exception(self, nested_map, path, expected_exception):
+    def test_assess_nested_map_exception(self, nested_map, path,
+                                         expected_exception):
         """Test that the assess_nested_map function raises a KeyError"""
         with self.assertRaises(KeyError) as context:
             assess_nested_map(nested_map, path)
@@ -43,12 +44,13 @@ class TestGetJson(unittest.TestCase):
 
         Args:
             test_url (str): The test URL to be passed to get_json.
-            test_payload (dict): The expected payload to be returned by get_json.
-            mock_get: Mock object for the requests.get function.
+            test_payload (dict): The expected payload to be returned by
+            get_json.nmock_get: Mock object for the requests.get function.
 
         Raises:
-            AssertionError: If the output of get_json is not equal to test_payload
-                            or if the mocked get method was not called exactly once with test_url.
+            AssertionError: If the output of get_json is not equal to
+                            test_payload or if the mocked get method was
+                            not called exactly once with test_url.
         """
         """Configure the mock object"""
         mock_get.return_value = Mock()
