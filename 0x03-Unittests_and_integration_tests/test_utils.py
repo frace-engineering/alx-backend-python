@@ -13,7 +13,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
-    def test_access_nested_map(self, nested_map, path, expected) -> None:
+    def test_access_nested_map(self, nested_map, path, expected):
         """nested_map test method using assertEqual"""
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
@@ -22,7 +22,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": 1}, ("a", "b"), KeyError("Key 'a' not found in nested map"))
         ])
     def test_access_nested_map_exception(self, nested_map, path,
-                                         expected_exception) -> None:
+                                         expected_exception):
         """Test that the assess_nested_map function raises a KeyError"""
         with self.assertRaises(KeyError) as context:
             access_nested_map(nested_map, path)
@@ -40,7 +40,7 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
     ])
-    def test_get_json(self, test_url, test_payload, mock_get) -> None:
+    def test_get_json(self, test_url, test_payload, mock_get):
         """
         Test that the get_json function returns the expected result.
 
