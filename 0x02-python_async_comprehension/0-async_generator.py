@@ -2,9 +2,10 @@
 """Async coroutine genarator"""
 import asyncio
 import random
+from typing import AsyncGenerator
 
 
-async def async_generator() -> float:
+async def async_generator() -> AsyncGenerator[float, None, None]:
     """
     Loop ten times asynchronously and yield random number.
 
